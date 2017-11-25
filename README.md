@@ -2,9 +2,9 @@
 
 Sends ingame chat to a Discord channel
 
-### How to Use
+## Usage
 
-1. Install the [latest `.jar`](https://github.com/Gjum/Chat-to-Discord/releases) (uses Forge)
+1. Install the [latest `Chat-to-Discord-(version).jar`](https://github.com/Gjum/Chat-to-Discord/releases) (uses Forge)
 1. Create a webhook in the config screen of one of your Discord channels (or ask an admin to create a webhook url for you)
     - Click the gear next to the channel name
     - Select `Webhooks` on the left
@@ -16,3 +16,8 @@ Sends ingame chat to a Discord channel
 1. Paste the webhook url, change other options if you like
 1. Click `Done` so your changes are saved (don't hit Escape)
 
+## Development
+
+Package the distributable `.jar`: `gradlew reobf`
+
+You can then find it in `build/libs/`.
