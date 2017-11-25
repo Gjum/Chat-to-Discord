@@ -57,7 +57,7 @@ public class ChatToDiscordConfig {
      */
     private void syncProperties() {
         propEnabled = config.get(CATEGORY_MAIN, "enabled", true, "Enable/disable chat sending");
-        propDiscordMsgFormat = config.get(CATEGORY_MAIN, "discord message format", "{\"content\":\"`<time>` [<group>] **<player>**: <message>\"}", "");
+        propDiscordMsgFormat = config.get(CATEGORY_MAIN, "discord message format", "{\"username\":\"<player>\",\"avatar_url\":\"https://minotar.net/avatar/<player>\",\"content\":\"`[<group>]` <message>\"}", "");
         propWebhookUrl = config.get(CATEGORY_MAIN, "webhook url", "", "Get this from the discord channel settings");
 
         propignoredGroupsOn = config.get(CATEGORY_MAIN, "enable ignored groups", false, "Ignore chat on listed groups.");
