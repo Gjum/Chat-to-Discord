@@ -1,0 +1,12 @@
+[{
+  "modid": "chat-to-discord",
+  "name": "Chat to Discord",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/Gjum/Chat-to-Discord",
+  "authorList": ["Gjum"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}]
