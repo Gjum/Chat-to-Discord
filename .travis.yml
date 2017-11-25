@@ -1,0 +1,29 @@
+language: java
+jdk:
+- oraclejdk8
+install:
+- "./gradlew clean"
+script:
+- FORGE_VERSION=1.10.2-12.18.3.2254 ./gradlew reobf
+branches:
+  only:
+  - master
+  - "/v\\d+\\..*/"
+before_cache:
+- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -rf $HOME/.gradle/caches/*/fileHashes/
+- rm -rf $HOME/.gradle/caches/minecraft/deobfedDeps/
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+deploy:
+  provider: releases
+  api_key:
+    secure: TnxOBwr/r7TCS0Mc6hQWZaZX49zxseXkpdWJHoA4J0BKQn700xrmtVxRNoAj2qYB/1M6bEb98HCE4H65wx+Jm/wWyPMV/ndhOCKPdPKX8FKT9tVmj8uPwpPq03LPOA7bR60a6LGOrdGyxbSl1ULdaN/UUTOkuLyWMHM3PH/TnWBVcWoLm0pDCHlmGMwzc4QNv4GcbndTkCXim3JSxwrSCaWnxirOGJeQCF7VMbErYvmPxUzz6WCkt39gzvP+Zao1Tp7Vri81jHIu/d5gOce5LOlR1vUng97+pElcxM2OUq4aTFhdnPSE21Mj6yIPQZMex9uqT49Ej+K/nxpt51wAQ64t1dBRWWdJu2hxv7kTx8zmJmp0BHYu9GLmYfSAupX60MRXifwtJS3/pOvlhS6tKU6M0aRd06rb2s4al8XKlP8WxOPVuqbB/JyJo89HltmJaerVLCcjMBOVA5KfePkGS9krVfJ8P9tNiAAo7EhrMzgpZsFpPUhDJx8TPmJmEo05740K4gU17Mzqmb8JqujjPzYHeOQ5mXuVIsemmIbXtH/fNtsra7ovJeKP8vMT8noU74ZcqcpDwxMsIx1+lqpgIIWdnOFrwTssjRe5FPaPV+B3jGn0l1P3Wi/YQoTEsaaenGoejxDXKkod0yqf1BlpiB1bTTPCDQJA8qe20Oww27w=
+  skip_cleanup: true
+  file: build/libs/*.jar
+  file_glob: true
+  prerelease: true
+  on:
+    tags: true
