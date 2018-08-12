@@ -1,3 +1,7 @@
+# Project abandoned in favor of [CivRelay](https://github.com/Gjum/CivRelay)
+
+---
+
 ## Chat-to-Discord
 
 Sends ingame chat to a Discord channel
